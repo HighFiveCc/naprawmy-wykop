@@ -1,0 +1,11 @@
+{
+  "name": "Naprawmy Wykop",
+  "description": "Wykop Unofficial Extension",
+  "version": "1.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting"],
+  "host_permissions": ["*://wykop.pl/*", "*://www.wykop.pl/*"]
+}
