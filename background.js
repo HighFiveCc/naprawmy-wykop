@@ -2,6 +2,9 @@ function getFeatures(currentUrl) {
   if (/wykop\.pl\/wiadomosc-prywatna/i.test(currentUrl)) {
     return ["bigger-field-messages", "link-edit-prompt-input"];
   }
+  if (/wykop\.pl\/mikroblog/i.test(currentUrl)) {
+    return ["link-edit-prompt-input"];
+  }
   return [];
 }
 
