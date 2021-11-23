@@ -1,11 +1,12 @@
 {
   "name": "Naprawmy Wykop",
   "description": "Wykop Unofficial Extension",
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
   "permissions": ["scripting"],
-  "host_permissions": ["*://wykop.pl/*", "*://www.wykop.pl/*"]
+  "host_permissions": ["*://wykop.pl/*", "*://www.wykop.pl/*"],
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
 }
