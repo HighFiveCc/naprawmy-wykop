@@ -1,11 +1,10 @@
 function getFeatures(currentUrl) {
   if (/wykop\.pl\/wiadomosc-prywatna/i.test(currentUrl)) {
-    return ["bigger-field-messages", "link-edit-prompt-input"];
+    return ["bigger-field-messages"];
   }
-  if (/wykop\.pl\/mikroblog/i.test(currentUrl)) {
-    return ["link-edit-prompt-input"];
-  }
-  return [];
+
+  const globalFeatures = ["link-edit-prompt-input","floating-video"];
+  return globalFeatures;
 }
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
@@ -26,13 +25,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
           files: [`./features/${feature}.js`],
         })
         .catch((err) => console.log(err));
-
-      var s = document.createElement("script");
-      s.src = chrome.runtime.getURL(`/features/${feature}.js`);
-      s.onload = function () {
-        this.remove();
-      };
-      (document.head || document.documentElement).appendChild(s);
     });
   }
 });
