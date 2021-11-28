@@ -37,6 +37,9 @@ var feature = (function () {
   return {
     init: function () {
       var $editLink = document.querySelector(".editlink");
+      if ($editLink === undefined) {
+        return;
+      }
       $editLink.addEventListener("click", editLinkClickEvent);
     },
   };
